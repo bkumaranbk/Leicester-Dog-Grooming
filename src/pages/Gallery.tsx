@@ -33,6 +33,29 @@ const Gallery = () => {
       imageUrl: 'assets/4.png',
       alt: 'Golden Retriever after grooming'
     }
+    ,
+    {
+      id: 5,
+      imageUrl: 'assets/5.png',
+      alt: 'Golden Retriever after grooming'
+    }
+    ,
+    {
+      id: 6,
+      imageUrl: 'assets/7.png',
+      alt: 'Golden Retriever after grooming'
+    }
+    ,
+    {
+      id: 7,
+      imageUrl: 'assets/10a.png',
+      alt: 'Golden Retriever after grooming'
+    },
+    {
+      id: 10,
+      imageUrl: 'assets/9a.jpg',
+      alt: 'Golden Retriever after grooming'
+    }
   ];
 
   return (

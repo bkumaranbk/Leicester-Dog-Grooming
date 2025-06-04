@@ -16,24 +16,24 @@ interface GalleryItem {
 
 // Sample gallery items (replace with actual data)
 const galleryItems: GalleryItem[] = [
-  // {
-  //   id: 1,
-  //   before: 'assets/3.png',
-  //   after: 'assets/1.png',
-  //   description: 'Standard poodle trim transformation'
-  // },
+  {
+    id: 1,
+    before: 'assets/3.png',
+    after: 'assets/1.png',
+    description: 'Standard poodle trim transformation'
+  },
   {
     id: 2,
-    before: 'assets/6.png',
-    after: 'assets/5.png',
+    before: 'assets/8b.jpg',
+    after: 'assets/9a.jpg',
     description: 'Schnauzer grooming makeover'
   },
-  // {
-  //   id: 3,
-  //   before: 'https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1064&auto=format&fit=crop',
-  //   after: 'https://images.unsplash.com/photo-1588943211346-0908a1fb0b01?q=80&w=1035&auto=format&fit=crop',
-  //   description: 'Cocker spaniel summer cut'
-  // }
+  {
+    id: 3,
+    before: 'assets/11b.png',
+    after: 'assets/10a.png',
+    description: 'Cocker spaniel summer cut'
+  }
 ];
 
 const BeforeAfterGallery = () => {
@@ -119,7 +119,7 @@ const BeforeAfterGallery = () => {
           <div className="flex justify-between items-center mb-4">
             <div className="flex-1">
               <p className="text-brand-primary font-medium">{currentIndex + 1} / {galleryItems.length}</p>
-              <h3 className="text-lg font-semibold mt-1">{currentItem.description}</h3>
+              {/* <h3 className="text-lg font-semibold mt-1">{currentItem.description}</h3> */}
             </div>
             <div>
               <button 
