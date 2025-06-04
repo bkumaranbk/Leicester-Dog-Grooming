@@ -49,12 +49,185 @@
       "url": "https://leicesterdoggroomingcourses.co.uk"
     }
     </script>
+
+  <!-- Cookie Consent Styles -->
+  <style>
+    #cookie-popup {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      display: none;
+      animation: slideIn 0.4s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .cookie-container {
+      background: #ffffff;
+      border-radius: 12px;
+      margin-left: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      padding: 1rem 1.5rem;
+      max-width: 500px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .cookie-container button {
+      background-color: #2E65E0;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .cookie-container button:hover {
+      background-color: #497dec;
+    }
+
+    .cookie-options {
+      display: none;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cookie-options label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .cookie-options input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      accent-color: #2E65E0;
+      cursor: pointer;
+    }
+  </style>
 </head>
 
 <body>
 
   <div id="root"></div>
+  <!-- Cookie Consent Popup -->
+  <div id="cookie-popup">
+    <div class="cookie-container">
+      <p>We use cookies to improve your experience. By continuing, you accept our use of cookies.</p>
+      <div class="cookie-options">
+        <label><input type="checkbox" id="analytics-cookies"> Analytics Cookies</label>
+        <label><input type="checkbox" id="ads-cookies"> Ads Cookies</label>
+        <label><input type="checkbox" id="functional-cookies"> Functional Cookies</label>
+      </div>
+      <div style="display: flex; gap: 0.5rem;">
+        <button id="customize-cookie">Customize</button>
+        <button id="reject-cookie">Reject All</button>
+        <button id="accept-cookie">Accept All</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Your React App Entry -->
   <script type="module" src="/src/main.tsx"></script>
+
+  <!-- Cookie Consent Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const popup = document.getElementById("cookie-popup");
+      const acceptBtn = document.getElementById("accept-cookie");
+      const rejectBtn = document.getElementById("reject-cookie");
+      const customizeBtn = document.getElementById("customize-cookie");
+
+      const cookieOptions = document.querySelector(".cookie-options");
+
+      // Checkbox elements
+      const analyticsCheckbox = document.getElementById("analytics-cookies");
+      const adsCheckbox = document.getElementById("ads-cookies");
+      const functionalCheckbox = document.getElementById("functional-cookies");
+
+      // Create "Save Preferences" button dynamically
+      const saveBtn = document.createElement("button");
+      saveBtn.textContent = "Save Preferences";
+      saveBtn.style.backgroundColor = "#555";
+      saveBtn.style.color = "#fff";
+      saveBtn.style.borderRadius = "8px";
+      saveBtn.style.padding = "0.5rem 1rem";
+      saveBtn.style.fontWeight = "600";
+      saveBtn.style.border = "none";
+      saveBtn.style.cursor = "pointer";
+      saveBtn.style.transition = "background-color 0.3s ease";
+      saveBtn.addEventListener("mouseover", () => saveBtn.style.backgroundColor = "#333");
+      saveBtn.addEventListener("mouseout", () => saveBtn.style.backgroundColor = "#555");
+      cookieOptions.appendChild(saveBtn);
+
+      let isOptionsVisible = false;
+
+      // Cookie helpers
+      function getCookie(name) {
+        const value = `; ${document.cookie}`;
+        const parts = value.split(`; ${name}=`);
+        if (parts.length === 2) return parts.pop().split(";").shift();
+      }
+
+      function setCookie(name, value, days) {
+        const expires = new Date(Date.now() + days * 864e5).toUTCString();
+        document.cookie = `${name}=${value}; expires=${expires}; path=/; SameSite=Lax`;
+      }
+
+      // Check for cookieConsent
+      if (!getCookie("cookieConsent")) {
+        popup.style.display = "block";
+      }
+
+      acceptBtn.addEventListener("click", () => {
+        setCookie("cookieConsent", "accepted", 365);
+        setCookie("analyticsCookies", true, 365);
+        setCookie("adsCookies", true, 365);
+        setCookie("functionalCookies", true, 365);
+        popup.style.display = "none";
+      });
+
+      rejectBtn.addEventListener("click", () => {
+        setCookie("cookieConsent", "rejected", 365);
+        setCookie("analyticsCookies", false, 365);
+        setCookie("adsCookies", false, 365);
+        setCookie("functionalCookies", false, 365);
+        popup.style.display = "none";
+      });
+
+      customizeBtn.addEventListener("click", () => {
+        isOptionsVisible = !isOptionsVisible;
+        cookieOptions.style.display = isOptionsVisible ? "flex" : "none";
+      });
+
+      saveBtn.addEventListener("click", () => {
+        setCookie("cookieConsent", "custom", 365);
+        setCookie("analyticsCookies", analyticsCheckbox.checked, 365);
+        setCookie("adsCookies", adsCheckbox.checked, 365);
+        setCookie("functionalCookies", functionalCheckbox.checked, 365);
+        popup.style.display = "none";
+      });
+    });
+  </script>
 </body>
 
 </html>

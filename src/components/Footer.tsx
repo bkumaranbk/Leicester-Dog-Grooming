@@ -21,8 +21,8 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-3">
               <Phone className="text-brand-primary shrink-0" size={20} />
-              <a 
-                href="tel:+44 7930 549 717" 
+              <a
+                href="tel:+44 7930 549 717"
                 className="text-foreground/80 hover:text-brand-primary transition-colors"
               >
                 +44 7930 549 717
@@ -30,8 +30,8 @@ const Footer = () => {
             </div>
             <div className="flex items-center space-x-3">
               <Mail className="text-brand-primary shrink-0" size={20} />
-              <a 
-                href="mailto:bernieboo200@gmail.com" 
+              <a
+                href="mailto:bernieboo200@gmail.com"
                 className="text-foreground/80 hover:text-brand-primary transition-colors"
               >
                 bernieboo200@gmail.com
@@ -44,40 +44,40 @@ const Footer = () => {
             <h3 className="text-xl font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <a 
-                  href="/" 
+                <a
+                  href="/"
                   className="text-foreground/80 hover:text-brand-primary transition-colors"
                 >
                   Home
                 </a>
               </li>
               <li>
-                <a 
-                  href="/about" 
+                <a
+                  href="/about"
                   className="text-foreground/80 hover:text-brand-primary transition-colors"
                 >
                   About Us
                 </a>
               </li>
               <li>
-                <a 
-                  href="/services" 
+                <a
+                  href="/services"
                   className="text-foreground/80 hover:text-brand-primary transition-colors"
                 >
                   Our Services
                 </a>
               </li>
               <li>
-                <a 
-                  href="/gallery" 
+                <a
+                  href="/gallery"
                   className="text-foreground/80 hover:text-brand-primary transition-colors"
                 >
                   Gallery
                 </a>
               </li>
               <li>
-                <a 
-                  href="/contact" 
+                <a
+                  href="/contact"
                   className="text-foreground/80 hover:text-brand-primary transition-colors"
                 >
                   Contact Us
@@ -93,18 +93,18 @@ const Footer = () => {
               Follow us on social media to see our latest work and updates.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
+              <a
+                href="https://facebook.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="text-brand-primary" size={20} />
               </a>
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
+              <a
+                href="https://instagram.com"
+                target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
                 aria-label="Instagram"
@@ -116,7 +116,8 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-100 mt-10 pt-8 text-center text-sm text-foreground/60">
-          <p>© {currentYear} Leicester Dog Grooming Courses. All rights reserved.</p>
+          <p>&copy; {currentYear} Leicester Dog Grooming Courses. Partnered with <a href='https://www.ansely.co.uk/' target='blank'><strong>Ansely</strong></a></p>
+
         </div>
       </div>
     </footer>
