@@ -94,7 +94,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/share/1E1bKNx3CZ/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
@@ -103,7 +103,7 @@ const Footer = () => {
                 <Facebook className="text-brand-primary" size={20} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/leicesterdoggrooming?igsh=ejVmOXZjc212NTZy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-brand-primary/10 flex items-center justify-center hover:bg-brand-primary/20 transition-colors"
