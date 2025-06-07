@@ -83,6 +83,22 @@ const Footer = () => {
                   Contact Us
                 </a>
               </li>
+              <li>
+                <a
+                  href="/privacy-policy"
+                  className="text-foreground/80 hover:text-brand-primary transition-colors"
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/terms-and-conditions"
+                  className="text-foreground/80 hover:text-brand-primary transition-colors"
+                >
+                  Terms & Conditions
+                </a>
+              </li>
             </ul>
           </div>
 

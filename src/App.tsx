@@ -15,6 +15,8 @@ import Login from "./pages/Login";
 import { setNavigateCallback } from "./axios/axiosInstance";
 import { AdminLoginGuard } from "./middleware/AuthGuard";
 import { useAuthSession } from "./middleware/authMiddleware";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsAndConditions from "./pages/TermsAndConditions";
 
 const AppWrapper = () => {
   return (
@@ -51,6 +53,8 @@ const AppContent: React.FC = () => {
       </Route>
       <Route path="/klarna-checkout" element={<KlarnaCheckout />} /> {/* Add KlarnaCheckout route */}
       <Route path="*" element={<NotFound />} />
+      <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+      <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
     </Routes>
 
   );
